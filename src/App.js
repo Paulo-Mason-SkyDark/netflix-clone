@@ -17,10 +17,6 @@ function App() {
     );
     let chosen = originalsMovie[0]?.items.results[randomChosen];
     let chosenInfo = await tmdb.getMovieOrTvInfo(chosen?.id, "tv");
-    console.log(
-      "🚀 ~ file: App.js ~ line 20 ~ getFeaturedMovie ~ chosenInfo",
-      chosenInfo
-    );
     setFeaturedData(chosenInfo);
   }, [movieHomeList]);
 
