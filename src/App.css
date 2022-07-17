@@ -9,3 +9,7 @@ body {
   color: #fff;
   margin: 0;
 }
+
+.movie-lists {
+  margin-top: -100px;
+}
