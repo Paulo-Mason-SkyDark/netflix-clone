@@ -2,11 +2,14 @@ import "./App.css";
 import tmdb from "./Tmdb";
 import MovieList from "./components/MovieList";
 import FeaturedMovie from "./components/FeaturedMovie";
+import Header from "./components/Header";
+
 import { useEffect, useState, useCallback } from "react";
 
 function App() {
   const [movieHomeList, setMovieHomeList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   const getFeaturedMovie = useCallback(async () => {
     let originalsMovie = movieHomeList.filter(
@@ -32,8 +35,25 @@ function App() {
     getFeaturedMovie();
   }, [movieHomeList]);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollListener);
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []);
+
   return (
     <div className="page">
+      <Header blackHeader={blackHeader} />
+
       {featuredData && <FeaturedMovie movie={featuredData} />}
 
       <section className="movie-lists">

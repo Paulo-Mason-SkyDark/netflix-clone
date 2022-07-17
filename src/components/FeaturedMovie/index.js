@@ -6,8 +6,6 @@ const FeaturedMovie = ({ movie }) => {
 
   movie.genres?.forEach((genre) => genres.push(genre.name));
 
-  // for () { }
-
   return (
     <section
       className="featured"

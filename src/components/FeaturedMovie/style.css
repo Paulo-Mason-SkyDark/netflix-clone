@@ -14,6 +14,12 @@
   width: inherit;
   height: inherit;
   background: linear-gradient(to right, #111 20%, transparent 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  padding-bottom: 150px;
+  padding-top: 70px;
 }
 
 .featured--name {
@@ -27,7 +33,8 @@
   margin-top: 15px;
 }
 
-.featured--points, .featured--year, .featured--number_of_seasons {
+.featured--points, .featured--year,
+.featured--number_of_seasons {
   display: inline-block;
   margin-right: 15px;
 }
@@ -74,4 +81,10 @@
 .featured--myListButton {
   background-color: #333;
   color: #FFF;
+}
+
+.featured--genres {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #999;
 }
