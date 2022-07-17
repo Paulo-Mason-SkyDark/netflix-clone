@@ -9,7 +9,7 @@ import { useEffect, useState, useCallback } from "react";
 function App() {
   const [movieHomeList, setMovieHomeList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
-  const [blackHeader, setBlackHeader] = useState(true);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   const getFeaturedMovie = useCallback(async () => {
     let originalsMovie = movieHomeList.filter(
